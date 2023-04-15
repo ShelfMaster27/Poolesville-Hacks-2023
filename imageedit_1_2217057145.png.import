@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Flagstone-Architextures.jpg-94c2640c332d38fa028f22d72fabf547.stex"
+path="res://.import/imageedit_1_2217057145.png-8ca0aad3f904d2469f99ab514143bd4d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Flagstone-Architextures.jpg"
-dest_files=[ "res://.import/Flagstone-Architextures.jpg-94c2640c332d38fa028f22d72fabf547.stex" ]
+source_file="res://imageedit_1_2217057145.png"
+dest_files=[ "res://.import/imageedit_1_2217057145.png-8ca0aad3f904d2469f99ab514143bd4d.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true
