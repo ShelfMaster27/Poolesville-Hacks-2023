@@ -16,6 +16,7 @@ position = Vector2( -1, 0 )
 texture = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="Title/Sprite"]
+current = true
 
 [node name="Sprite2" type="Sprite" parent="Title"]
 position = Vector2( 437, 155 )

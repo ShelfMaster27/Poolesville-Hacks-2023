@@ -37,10 +37,21 @@ func _ready():
 		
 	# rmber to add reverse of above for future scenes
 	
-	title_cam.limit_left = get_node("Sprite").get_height.x  * map_cellsize.x
-	title_cam.limit_top = get_node("Sprite").get_height.y * map_cellsize.y
-	title_cam.limit_right = get_node("Sprite").width.x * map_cellsize.x
-	title_cam.limit_bottom = get_node("Sprite").height.y * map_cellsize.y
+	#title_cam.global_position = get_parent.global_position
+	#title_cam.zoom 
+	
+	title_cam.current = true
+	var scaleX = float(get_node("Sprite").texture.get_width()) / ProjectSettings.get("display/window/size/width")
+	var scaleY = float(get_node("Sprite").texture.get_height()) / ProjectSettings.get("display/window/size/height")
+	title_cam.global_position = get_node("Sprite").global_position
+	print(get_node("Sprite").texture.get_width())
+	print(ProjectSettings.get("display/window/size/width"))
+	print(scaleX)
+	title_cam.zoom = Vector2(scaleX, scaleY)
+	#title_cam.limit_left = get_node("Sprite").get_height.x  * map_cellsize.x
+	#title_cam.limit_top = get_node("Sprite").get_height.y * map_cellsize.y
+	#title_cam.limit_right = get_node("Sprite").width.x * map_cellsize.x
+	#title_cam.limit_bottom = get_node("Sprite").height.y * map_cellsize.y
 	
 	if matching_scene_trigger != "":
 		var scene_trigger = curr_scene.get_node(matching_scene_trigger)
