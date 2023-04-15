@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocity = Vector2.ZERO
-onready var _animated_sprite = $AnimatedSprite
+onready var anim = $AnimatedSprite
 
 var animation: int = PlayerAnim.RIGHT_IDLE
 var _move_x = MoveX.IDLE
@@ -12,7 +12,7 @@ enum MoveX { IDLE, RIGHT, LEFT = -1 }
 enum MoveY { IDLE, DOWN, UP = -1 }
 
 enum PlayerAnim {
-	LEFT, LEFT_IDLE, RIGHT, RIGHT_IDLE, UP, UP_IDLE,
+	LEFT, LEFT_IDLE, RIGHT, RIGHT_IDLE, UP, UP_IDLE, PUNCH
 }
 
 # tremble and weep - nangs
@@ -27,6 +27,9 @@ func process_input():
 
 	if Input.is_action_pressed("ui_up"):
 		_move_y += MoveY.UP
+		
+	if Input.is_action_pressed("Punch"):
+		anim.play()
 
 	if _move_x != MoveX.IDLE:
 		animation = _move_x + 1
@@ -38,18 +41,21 @@ func process_input():
 func _process(_delta):
 	process_input()
 	
-	_animated_sprite.flip_h = animation < PlayerAnim.RIGHT
+	anim.flip_h = animation < PlayerAnim.RIGHT
 	match animation:
 		PlayerAnim.RIGHT, PlayerAnim.LEFT:
-			_animated_sprite.play("right")
+			anim.play("right")
 		
 		PlayerAnim.UP:
-			_animated_sprite.play("backward")
+			anim.play("backward")
 		PlayerAnim.RIGHT_IDLE, PlayerAnim.LEFT_IDLE:
-			_animated_sprite.play("idle right")
+			anim.play("idle right")
 		
 		PlayerAnim.UP_IDLE:
-			_animated_sprite.play("idle backward")
+			anim.play("idle backward")
+			
+		PlayerAnim.PUNCH:
+			anim.play("Punch")
 
 func _physics_process(delta):
 	velocity = Vector2(_move_x, _move_y).normalized() * 150

@@ -37,10 +37,10 @@ func _ready():
 		
 	# rmber to add reverse of above for future scenes
 	
-	title_cam.limit_left = get_node("Sprite").get_height.x  * map_cellsize.x
-	title_cam.limit_top = get_node("Sprite").get_height.y * map_cellsize.y
-	title_cam.limit_right = get_node("Sprite").width.x * map_cellsize.x
-	title_cam.limit_bottom = get_node("Sprite").height.y * map_cellsize.y
+	#title_cam.limit_left = get_node("Sprite").get_height.x  * map_cellsize.x
+	#title_cam.limit_top = get_node("Sprite").get_height.y * map_cellsize.y
+	#title_cam.limit_right = get_node("Sprite").width.x * map_cellsize.x
+	#title_cam.limit_bottom = get_node("Sprite").height.y * map_cellsize.y
 	
 	if matching_scene_trigger != "":
 		var scene_trigger = curr_scene.get_node(matching_scene_trigger)
