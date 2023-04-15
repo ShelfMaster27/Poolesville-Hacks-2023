@@ -18,3 +18,10 @@ current = true
 position = Vector2( 437, 155 )
 scale = Vector2( -0.5, 0.5 )
 texture = ExtResource( 1 )
+
+[node name="Play Button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
