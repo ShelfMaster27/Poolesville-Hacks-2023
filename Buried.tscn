@@ -1,60 +1,20 @@
 [gd_scene load_steps=3 format=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "Down",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Up",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Right_Left",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Down Idle",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Up Idle",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Right_Left Idle",
-"speed": 5.0
-} ]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Starting Cave.tscn" type="PackedScene" id=2]
 
 [node name="Buried" type="Node2D"]
 
-[node name="Player" type="KinematicBody2D" parent="."]
+[node name="Starting Cave" parent="." instance=ExtResource( 2 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-current = true
-limit_smoothed = true
-smoothing_enabled = true
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-frames = SubResource( 2 )
-animation = "Right_Left Idle"
+[node name="Player" parent="." instance=ExtResource( 1 )]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( -31.748, 26.9858 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2( -30.9543, -3.1748 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
