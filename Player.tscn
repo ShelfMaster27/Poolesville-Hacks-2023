@@ -31,10 +31,10 @@ animations = [ {
 "name": "Down Idle",
 "speed": 20.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 15 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Up Idle",
-"speed": 5.0
+"name": "Punch",
+"speed": 25.0
 }, {
 "frames": [  ],
 "loop": true,
@@ -51,10 +51,10 @@ animations = [ {
 "name": "Up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 15 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 14 ) ],
+"frames": [  ],
 "loop": true,
-"name": "Punch",
-"speed": 25.0
+"name": "Up Idle",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -73,7 +73,7 @@ smoothing_enabled = true
 scale = Vector2( 0.0640491, 0.0528142 )
 frames = SubResource( 2 )
 animation = "Punch"
-frame = 2
+frame = 21
 playing = true
 
 [node name="Position2D" type="Position2D" parent="."]
