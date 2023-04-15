@@ -44,15 +44,15 @@ func _process(_delta):
 	anim.flip_h = animation < PlayerAnim.RIGHT
 	match animation:
 		PlayerAnim.RIGHT, PlayerAnim.LEFT:
-			anim.play("right")
+			anim.play()
 		
 		PlayerAnim.UP:
-			anim.play("backward")
+			anim.play("Up")
 		PlayerAnim.RIGHT_IDLE, PlayerAnim.LEFT_IDLE:
-			anim.play("idle right")
+			anim.play("Right_Left Idle")
 		
 		PlayerAnim.UP_IDLE:
-			anim.play("idle backward")
+			anim.play("Up Idle")
 			
 		PlayerAnim.PUNCH:
 			anim.play("Punch")
