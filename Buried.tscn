@@ -1,23 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Title.tscn" type="PackedScene" id=2]
 [ext_resource path="res://frfr player 1.png" type="Texture" id=3]
 [ext_resource path="res://imageedit_1_2217057145.png" type="Texture" id=4]
+[ext_resource path="res://World.gd" type="Script" id=5]
 
 [node name="Buried" type="Node2D"]
 
 [node name="Title" parent="." instance=ExtResource( 2 )]
+script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Title"]
+position = Vector2( -1, 0 )
 texture = ExtResource( 4 )
 
+[node name="Camera2D" type="Camera2D" parent="Title/Sprite"]
+
 [node name="Sprite2" type="Sprite" parent="Title"]
-position = Vector2( 558, 472 )
+position = Vector2( 437, 155 )
 scale = Vector2( -0.5, 0.5 )
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 484, 459 )
 scale = Vector2( -10, 10 )
 

@@ -15,23 +15,32 @@ func _ready():
 	var map_limits
 	var map_cellsize
 	var cam = player.get_node("Camera2D")
+	var title_cam = get_node("Sprite/Camera2D")
+	
+	cam.current == false
+	title_cam.current == true
 	
 	matching_scene_trigger = globals.matching_scene_trigger
 	globals.matching_scene_trigger = ""
 	ResourceSaver.save("res://globalresource.tres", globals)
 	
-	if curr_scene.get_name() == "Starting Cave":
-		map_limits = curr_scene.get_node("TileMapStartingCave").get_used_rect()
-		map_cellsize = curr_scene.get_node("TileMapStartingCave").cell_size
-		cam.zoom.x = 0.3
-		cam.zoom.y = 0.3
-	else:
-		pass
 	
-	cam.limit_left = map_limits.position.x  * map_cellsize.x
-	cam.limit_top = map_limits.position.y * map_cellsize.y
-	cam.limit_right = map_limits.end.x * map_cellsize.x
-	cam.limit_bottom = map_limits.end.y * map_cellsize.y
+	if curr_scene.get_name() == "Title":
+		cam.zoom.x = 0.9
+		cam.zoom.y = 0.9
+		player.visible == false
+		cam.current == false
+		title_cam.current == true
+		
+		title_cam.scale.x = 1.5
+		title_cam.scale.y = 1.5
+		
+	# rmber to add reverse of above for future scenes
+	
+	title_cam.limit_left = get_node("Sprite").get_height.x  * map_cellsize.x
+	title_cam.limit_top = get_node("Sprite").get_height.y * map_cellsize.y
+	title_cam.limit_right = get_node("Sprite").width.x * map_cellsize.x
+	title_cam.limit_bottom = get_node("Sprite").height.y * map_cellsize.y
 	
 	if matching_scene_trigger != "":
 		var scene_trigger = curr_scene.get_node(matching_scene_trigger)
@@ -40,7 +49,7 @@ func _ready():
 			var position = scene_trigger.get_child(1).global_position
 			player.global_position = position
 	else:
-		var start_position = curr_scene.get_node("Position2D")
+		var start_position = player.get_node("Position2D")
 		player.global_position = start_position.global_position
 	
 	register_scene_triggers()
