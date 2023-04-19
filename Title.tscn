@@ -32,7 +32,7 @@ position = Vector2( 497.019, 122.529 )
 scale = Vector2( 0.60116, 0.520786 )
 frames = SubResource( 1 )
 animation = "Down Idle"
-frame = 14
+frame = 12
 playing = true
 flip_h = true
 

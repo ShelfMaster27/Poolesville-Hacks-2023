@@ -11,10 +11,10 @@ func _ready():
 	var map_limits
 	var map_cellsize
 	var cam = player.get_node("Camera2D")
-	var title_cam = get_node("Menu Background/Camera2D")
+	var title_cam = get_node("Menu Background/Camera2D") #Menu Background/Camera2D
 	
-	cam.current == false
-	title_cam.current == true
+	cam.current = false
+	title_cam.current = true
 	
 	if curr_scene.get_name() == "Title":
 		player.visible = false
